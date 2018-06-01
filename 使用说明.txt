@@ -1,0 +1,14 @@
+1、下载swoole扩展
+2、tar zxvf
+3、进入swoole目录
+4、编译php /XAMPP/xamppfiles/bin/phpsize
+5、安装 sudo ./configure --with-php-config=/Applications/XAMPP/xamppfiles/bin/php-config
+6、sudo make && sudo make install
+7、php.ini里面加 extension=swoole.so
+8、启动说明（mac xampp为例）启动服务端  
+/Applications/XAMPP/bin/php-7.0.2 /Applications/XAMPP/htdocs/swoole/demo1-serv.php
+9、客户端 telnet 127.0.0.1 9999
+10、彻底关闭telnet
+先关闭守护进程参数
+11、查询占用端口pid netstat -apn | grep 9999 (我监听的是9999端口)
+12、kill -p +pid
