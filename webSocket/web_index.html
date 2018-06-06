@@ -1,0 +1,18 @@
+<body>
+<script>
+var wsServer = "ws://127.0.0.1:9999";
+var webSocket = new webSocket(wsServer);
+webSocket.opopen = function(evt){
+	console.log("链接成功");
+}
+webSocket.onclose = function(evt){
+	console.log("关闭");
+}
+webSocket.onmessage = function(evt){
+	console.log(evt.data);
+}
+webSocket.onerror = function(evt,e){
+	console.log('error');
+}
+</script>
+</body>
