@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="myTitle">Title</title>
+</head>
+<body>
+	<div id="send_msg" style="width: 1000px;height: 1000px;display: none;">
+	<div id="msg"></div>
+		<div class="show_send">
+		<p>发送信息<p>
+			<input type="text" id="text"><input class="send_button" type="submit" value="发送数据" onclick="send_msg()" />
+		</div>
+	</div>
+	<div id="setName" class="box-shadow" style="width: 1000px;height: 1000px" >
+		<p>昵称<p>
+		<input type="text" id="myname">
+		<input type="submit" class="setUserName" value="设置昵称" onclick="send_name()" />
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdn.bootcss.com/web-socket-js/1.0.0/web_socket.js"></script>
+<script src="/swooleOnLine/speak/web.js"></script>
+</html>
