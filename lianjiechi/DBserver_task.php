@@ -1,8 +1,8 @@
 <?php
 $server = new swoole_server('127.0.0.1',9509);
 $server->set([
-	'worker_num'=>2,
-	'task_worker_num'=>5,
+	'worker_num'=>100,    //100worker进程
+	'task_worker_num'=>10, //可以用10个task进程，就是有10个进程可以用长链接
 ]);
 
 //$fd 是客户端id,$from_id 是线程id,$data,是接收客户端的参数
