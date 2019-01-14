@@ -1,7 +1,7 @@
 <?php
 $server = new swoole_server('127.0.0.1',9509);
 $server->set([
-	'worker_num'=>100,    //100worker进程
+	'worker_num'=>20,    //100worker进程
 	'task_worker_num'=>10, //可以用10个task进程，就是有10个进程可以用长链接
 ]);
 
@@ -33,7 +33,7 @@ function go_onTast($server,$task_id,$from_id,$sql){
 	static $link = null;
 	if($link == null){
 		try {
-			$pdo = new pdo('mysql:host=localhost:3603;dbname=company','root','123');
+			$pdo = new pdo('mysql:host=localhost:3603;dbname=company','root','123',[PDO::ATTR_PERSISTENT => true]);
 		}catch (PDOException $e) {
 			$server->finish("Mysql Error : ".$e->getMessage()."\n");
 		}

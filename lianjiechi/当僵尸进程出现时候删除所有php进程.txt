@@ -1,0 +1,1 @@
+1、关闭所有php进程（linux命令：killall -9 php），然后重启swoole服务端进程。
